@@ -1,4 +1,4 @@
-Important Notice
+## Important Notice
 To pay with stripe in test mode, use card information
 
 Card Number : 4242424242424242
