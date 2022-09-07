@@ -41,7 +41,7 @@ const Cart = () => {
         <div className='topCartDetailDiv'>Card number :&nbsp; <span style={{fontWeight:"600"}}> 4242424242424242</span></div>
         <div className='topCartDetailDiv topCartDetailDiv2'>
           <span>Expiry :&nbsp;<span style={{fontWeight:"600"}}>04/24</span></span>
-          <span>Cvc :&nbsp; <span style={{fontWeight:"600"}}>424</span> </span>
+          <span>CVC :&nbsp; <span style={{fontWeight:"600"}}>424</span> </span>
         </div>
 
         {cartItems.length<1 && (
