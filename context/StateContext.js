@@ -46,18 +46,31 @@ export const StateContext = ({children}) => {
         setCartItems(newCartItems);
       }
 
-    const toggleCartItemQuantity = (id, value)=>{
-        foundProduct=cartItems.find((item)=> item._id === id)
+      const toggleCartItemQuantity = (id, value)=>{
+        foundProduct=cartItems.find((item)=> item._id === id)   
         index = cartItems.findIndex((product) => product._id === id)
-        const newCartItems = cartItems.filter((item)=>item._id!==id)
+        console.log(cartItems);
+        const array1 =[]
+        const array2=[]
+
+        cartItems.map((element)=>{
+            const count = cartItems.findIndex((elem)=>elem.name === element.name)
+            if(count<index){
+                array1.push(element)
+            }
+            else if (count>index){
+                array2.push(element)
+            }
+        })
 
         if(value==='inc'){ 
-            setCartItems([...newCartItems, {...foundProduct, quantity:foundProduct.quantity + 1}])
+            const lmaoCart = [...array1,{...foundProduct, quantity:foundProduct.quantity + 1}, ...array2]
+            setCartItems(lmaoCart)
             setTotalPrice((prevTotalPrice)=>prevTotalPrice+foundProduct.price)
             setTotalQuantities(prevTotalQuantities => prevTotalQuantities+1)
         }else if (value==='desc'){
             if(foundProduct.quantity>1){
-                setCartItems([...newCartItems, {...foundProduct, quantity:foundProduct.quantity - 1}])
+                setCartItems([...array1,{...foundProduct, quantity:foundProduct.quantity - 1}, ...array2])
                 setTotalPrice((prevTotalPrice)=>prevTotalPrice - foundProduct.price)
                 setTotalQuantities(prevTotalQuantities => prevTotalQuantities - 1)
             }

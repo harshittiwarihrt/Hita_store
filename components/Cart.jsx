@@ -37,6 +37,12 @@ const Cart = () => {
           <span className='heading'>Your Cart</span>
           <span className='cart-num-items'>({totalQuantities} items)</span>
         </button>
+        <div className='topCartDetailDiv topCartDetailDivM' style={{fontWeight:"600"}}>To pay with stripe in test mode, use card information</div>
+        <div className='topCartDetailDiv'>Card number :&nbsp; <span style={{fontWeight:"600"}}> 4242424242424242</span></div>
+        <div className='topCartDetailDiv topCartDetailDiv2'>
+          <span>Expiry :&nbsp;<span style={{fontWeight:"600"}}>04/24</span></span>
+          <span>Cvc :&nbsp; <span style={{fontWeight:"600"}}>424</span> </span>
+        </div>
 
         {cartItems.length<1 && (
           <div className='empty-cart'>
@@ -84,21 +90,12 @@ const Cart = () => {
         {cartItems.length>=1 && (
           <div className='cart-bottom'>
             <div className='total'>
-              <h3>Sub total : </h3>
-              <h3>Rs. {totalPrice}</h3>
+              <h3>Sub total : Rs <span>{totalPrice}</span></h3>
             </div>
             <br/>
-            
-            <div className='btn-container'>
-              <h4 style={{color:'#630163'}}>To pay with stripe in test mode, use card information</h4>
-              <br/>
-              <p style={{color:'#787253'}}>Card Number : <b>4242424242424242</b></p>
-              <p style={{color:'#787253'}}>Expiry : <b>04/24</b></p>
-              <p style={{color:'#787253'}}>CVC : <b>424</b></p>
-            </div>
 
-            <div className='btn-container'>
-              <button type='button' className='btn' onClick={handleCheckout}>
+            <div className='btn-containerLast'>
+              <button type='button' className='btnLast' onClick={handleCheckout}>
                 Pay with Stripe
               </button>
             </div>

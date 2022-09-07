@@ -371,7 +371,10 @@ padding: 20px 10px;
 }
 .total{
   display: flex;
-  justify-content: space-between;
+  align-items: center;
+  width: 300px;
+  position: relative;
+  left: 4%;
 }
 .total h3{
   font-size: 22px;
@@ -385,19 +388,16 @@ padding: 20px 10px;
   border: none;
 }
 .cart-bottom{
+  width: 100%;
   position: absolute;
-  bottom: 12px;
-  right: 5px;
-  width: 95%;
-  padding: 30px 65px;
-  /* background-color: #fff; */
-
+  bottom:5px;
+  display: flex;
+  flex-direction: row;
 }
 
 .btn-container{
   width: 400px;
   margin: auto;
-  
 }
 .btn{
   width: 100%;
@@ -625,6 +625,44 @@ margin-top: 160px;
 .success .description .email,.cancel .description .email{
   margin-left: 5px;
   color: #f02d34;
+}
+
+.btnLast{
+  width: 100%;
+  max-width: 250px;
+  padding: 8px 3px !important;
+  border-radius: 29px;
+  border: none;
+  font-size: 20px;
+  margin-top: 5px;
+  text-transform: uppercase;
+  background-color: #f02d34;
+  color: #fff;
+  cursor: pointer;
+  transform: scale(1, 1);
+  transition: transform 0.5s ease;
+}
+.btnLast:hover{
+  transform: scale(1.1,1.1);
+}
+
+.btn-containerLast{
+  width: 220px;
+}
+
+.topCartDetailDiv{
+  position: relative;
+  left:3%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  font-size: 0.85rem;
+}
+.topCartDetailDivM{
+  margin-top: 7px;
+}
+.topCartDetailDiv2 span:nth-child(1){
+  margin-right: 10px;
 }
 
 @media screen and (max-width:800px) {

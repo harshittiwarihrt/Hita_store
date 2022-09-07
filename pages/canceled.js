@@ -11,8 +11,6 @@ const cancel = () => {
         </p>
         <h3>Sorry to see you here!</h3>
         <h2>Your transaction was not able to process</h2>
-        {/* <p className='email-msg'>Send us your feedback</p> */}
-        <p>lol</p>
         <p className='description'>
             If you have any questions, please email : 
             <a className='email' href='mailto:harshittiwarirt@gmail.com'>harshittiwarirt@gmail.com</a>
